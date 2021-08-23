@@ -25,12 +25,13 @@
         </div>
         <div class="number"></div>
         <div class="card-holder">
-                 <div>{{ number_form.value.number }}</div>
-          <label>Card holder</label>
+                 <div class="card-num">{{ number_form.value.number }}</div>
+          <label class="lblholder">Card holder</label>
         <pre>{{ holder_form.value.holder_name }}</pre>
         </div>
         <div class="card-expiration-date">
           <label>Expires</label>
+          <div>{{ expM }}/{{ expY }}</div>
         </div>
       </div>
       <div class="back">
@@ -74,14 +75,16 @@
     <fieldset>
       <label for="card-holder">Card holder</label>
       <div [formGroup]="holder_form" class="box">
-      <input type="text" formControlName="holder_name" value=" " type="num" maxlength="15">
+      <input type="text" formControlName="holder_name" [(ngModel)]="holder_name" value=" " type="num" maxlength="15">
     </div>
   </fieldset>
     <fieldset class="fieldset-expiration">
       <label for="card-expiration-month">Expiration date</label>
-{{selected}}
-      <select class="form-select" name="something" [(ngModel)]="selected">
-        <option *ngFor="let n of food">{{ n.name }}</option>
+      <select class="form-select" name="something" [(ngModel)]="expM">
+        <option *ngFor="let n of date">{{ n.month }}</option>
+      </select>
+      <select class="form-select space01" name="something" [(ngModel)]="expY">
+        <option *ngFor="let n of date">{{ n.year }}</option>
       </select>
 
 
@@ -95,13 +98,5 @@
     <button class="btn"><i class="fa fa-lock"></i> submit</button>
   </form>
 </div>
-
-
-
-  <input type="text" formControlName="name1" value=" ">
-  <input type="text" formControlName="name2">
-  <input type="text" formControlName="name3">
-  <input type="text" formControlName="name4">
-  <input type="text" formControlName="name5">
 
 

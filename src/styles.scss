@@ -151,7 +151,7 @@ Form
   button {
     width: 100%;
     outline: none!important;
-    background: linear-gradient(180deg, #49a09b, #3d8291);
+    background: #EE7310;
     text-transform: uppercase;
     font-weight: bold;
     border: none;
@@ -316,6 +316,7 @@ Credit Card
     top: 120px;
     left: 19px;
     font-size: 22px;
+    width: 100%;
     text-transform: capitalize;
   }
 
@@ -323,6 +324,9 @@ Credit Card
     text-align: right;
     left: auto;
     right: 20px;
+  }
+  .lblholder{
+    margin-top: 10px;
   }
 
   .ccv {
@@ -348,3 +352,6 @@ Credit Card
 
 }
 
+.space01{
+  margin-left:10px;
+}
